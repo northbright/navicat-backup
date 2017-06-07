@@ -1,2 +1,8 @@
-/client/client
-/server/server
+*
+!.gitignore
+!LICENSE
+!*.md
+!*.yml
+!*.go
+!*.json
+!*.sh
