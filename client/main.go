@@ -15,6 +15,7 @@ import (
 	"github.com/northbright/pathhelper"
 )
 
+// Config is the client configuration.
 type Config struct {
 	NavicatBackupDir string   `json:"navicat_backup_dir"`
 	RemoteUploadURLs []string `json:"remote_upload_urls"`

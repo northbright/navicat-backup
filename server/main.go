@@ -13,6 +13,7 @@ import (
 	"github.com/northbright/pathhelper"
 )
 
+// Config is the server configuration.
 type Config struct {
 	ServerAddr string `json:"server_addr"`
 }
