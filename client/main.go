@@ -8,6 +8,8 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"regexp"
+	"sort"
 
 	"github.com/northbright/httputil"
 	"github.com/northbright/pathhelper"
@@ -63,7 +65,21 @@ func getLatestBackupFile() (string, error) {
 		return "", fmt.Errorf("no backup file found")
 	}
 
-	return names[0], nil
+	// Sort names.
+	sort.Strings(names)
+
+	// Get latest file name which matches the "YYMMDDHHMMSS.psc" pattern(e.g. 170601220002.psc).
+	p := `^\d{12}\.psc$`
+	re := regexp.MustCompile(p)
+
+	l := len(names)
+	for i := l - 1; i >= 0; i-- {
+		if re.MatchString(names[i]) {
+			return names[i], nil
+		}
+	}
+
+	return "", fmt.Errorf("no psc file found")
 }
 
 func uploadBackupFile(latestBackupFile string) error {
