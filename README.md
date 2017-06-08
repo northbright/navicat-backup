@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/northbright/navicat-backup.svg?branch=master)](https://travis-ci.org/northbright/navicat-backup)
 [![Go Report Card](https://goreportcard.com/badge/github.com/northbright/navicat-backup)](https://goreportcard.com/report/github.com/northbright/navicat-backup)
 
-Backup tools for Navicat including both client and server.The tools are written in [Golang](https://golang.org)
+Backup tools for Navicat including both client and server.The tools are written in [Golang](https://golang.org).
 
 #### Use Case
 * Navicat has a daily backup schedule(backup to .psc files).
